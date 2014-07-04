@@ -1,0 +1,80 @@
+
+
+.gt-sideLeft, .gt-menuTop{
+    background-color: #164454;
+    color: #eff;
+}
+
+.gt-menuTop li > a:link, .gt-menuTop li > a:visited, .gt-menuTop li > a:hover{
+    color: #fff !important;
+    background-color: transparent;
+}
+.gt-menuTop li.open > a:link, .gt-menuTop li.open > a:visited, .gt-menuTop li.open > a:hover{
+    background-color: transparent;
+}
+.gt-menuTop ul.dropdown-menu{
+    background-color: #ff8e1d;
+}
+
+.gt-sideLeft li > a:link, .gt-sideLeft li > a:visited{
+    color: #77a7b5 !important;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+.gt-sideLeft .badge{
+    color: #ff8e1d;
+    background-color: transparent;
+}
+.gt-sideLeft li.active > a:link, .gt-sideLeft li.active > a:visited{
+    background-color: transparent;
+}
+
+/*Pagina principal objetos propios*/
+.porcentajeTranstarencia{
+    width: 100%;
+    padding-bottom: 100%;
+    display: block;
+    position: relative;
+    background-color: #afb5b1;
+    color: #fff;
+    border-radius: 50%;
+}
+.areaInformation{
+    background-color: #40656e;
+    color: #fff;
+}
+.formulaTransparencia{
+    background-color: #808080;
+    padding: 10px !important;
+    min-width: 380px;
+}
+.valorFormula{
+    width: 90%;
+    float: left;
+}
+.valorFormula span{
+    width: 100%;
+    white-space: nowrap;
+    display: block;
+    font-size: 24px;
+}
+.lineaFormula{
+    text-align: right;
+    border-top: 2px solid #d9bf24;
+}
+.lineaPorcentage{
+    font-size: 30px;
+    color: #d9bf24;
+    width: 10%;
+    float: left;
+    padding-top: 14px;
+}
+
+.areaAgregarProyecto{
+    font-size: 24px;
+}
+
+/*Estilos genericos*/
+.margin0{margin: 0}
+.bgWhite{background-color: #fff}
+.fontImportant{font: bold 24px Arial, Sans-Serif; color: #184353}
