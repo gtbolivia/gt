@@ -1,0 +1,52 @@
+<?php use Phalcon\Tag; ?>
+
+<?php echo $this->getContent(); ?>
+
+<table width="100%">
+    <tr>
+        <td align="left">
+            <?php echo $this->tag->linkTo(array("gestions/index", "Go Back")); ?>
+        </td>
+        <td align="right">
+            <?php echo $this->tag->linkTo(array("gestions/new", "Create ")); ?>
+        </td>
+    <tr>
+</table>
+
+<table class="browse" align="center">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Budget</th>
+         </tr>
+    </thead>
+    <tbody>
+    <?php foreach ($page->items as $gestion) { ?>
+        <tr>
+            <td><?php echo $gestion->id ?></td>
+            <td><?php echo $gestion->name ?></td>
+            <td><?php echo $gestion->description ?></td>
+            <td><?php echo $gestion->budget ?></td>
+            <td><?php echo $this->tag->linkTo(array("gestions/edit/" . $gestion->id, "Edit")); ?></td>
+            <td><?php echo $this->tag->linkTo(array("gestions/delete/" . $gestion->id, "Delete")); ?></td>
+        </tr>
+    <?php } ?>
+    </tbody>
+    <tbody>
+        <tr>
+            <td colspan="2" align="right">
+                <table align="center">
+                    <tr>
+                        <td><?php echo $this->tag->linkTo("gestions/search", "First") ?></td>
+                        <td><?php echo $this->tag->linkTo("gestions/search?page=" . $page->before, "Previous") ?></td>
+                        <td><?php echo $this->tag->linkTo("gestions/search?page=" . $page->next, "Next") ?></td>
+                        <td><?php echo $this->tag->linkTo("gestions/search?page=" . $page->last, "Last") ?></td>
+                        <td><?php echo $page->current, "/", $page->total_pages ?></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    <tbody>
+</table>

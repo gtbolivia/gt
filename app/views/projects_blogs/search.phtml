@@ -1,0 +1,50 @@
+<?php use Phalcon\Tag; ?>
+
+<?php echo $this->getContent(); ?>
+
+<table width="100%">
+    <tr>
+        <td align="left">
+            <?php echo $this->tag->linkTo(array("projects_blogs/index", "Go Back")); ?>
+        </td>
+        <td align="right">
+            <?php echo $this->tag->linkTo(array("projects_blogs/new", "Create ")); ?>
+        </td>
+    <tr>
+</table>
+
+<table class="browse" align="center">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Project</th>
+            <th>Description</th>
+         </tr>
+    </thead>
+    <tbody>
+    <?php foreach ($page->items as $projects_blog) { ?>
+        <tr>
+            <td><?php echo $projects_blog->id ?></td>
+            <td><?php echo $projects_blog->project_id ?></td>
+            <td><?php echo $projects_blog->description ?></td>
+            <td><?php echo $this->tag->linkTo(array("projects_blogs/edit/" . $projects_blog->id, "Edit")); ?></td>
+            <td><?php echo $this->tag->linkTo(array("projects_blogs/delete/" . $projects_blog->id, "Delete")); ?></td>
+        </tr>
+    <?php } ?>
+    </tbody>
+    <tbody>
+        <tr>
+            <td colspan="2" align="right">
+                <table align="center">
+                    <tr>
+                        <td><?php echo $this->tag->linkTo("projects_blogs/search", "First") ?></td>
+                        <td><?php echo $this->tag->linkTo("projects_blogs/search?page=" . $page->before, "Previous") ?></td>
+                        <td><?php echo $this->tag->linkTo("projects_blogs/search?page=" . $page->next, "Next") ?></td>
+                        <td><?php echo $this->tag->linkTo("projects_blogs/search?page=" . $page->last, "Last") ?></td>
+                        <td><?php echo $page->current, "/", $page->total_pages ?></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    <tbody>
+</table>

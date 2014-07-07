@@ -1,0 +1,48 @@
+<?php use Phalcon\Tag; ?>
+
+<?php echo $this->getContent(); ?>
+
+<table width="100%">
+    <tr>
+        <td align="left">
+            <?php echo $this->tag->linkTo(array("financial_institutions/index", "Go Back")); ?>
+        </td>
+        <td align="right">
+            <?php echo $this->tag->linkTo(array("financial_institutions/new", "Create ")); ?>
+        </td>
+    <tr>
+</table>
+
+<table class="browse" align="center">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+         </tr>
+    </thead>
+    <tbody>
+    <?php foreach ($page->items as $financial_institution) { ?>
+        <tr>
+            <td><?php echo $financial_institution->id ?></td>
+            <td><?php echo $financial_institution->name ?></td>
+            <td><?php echo $this->tag->linkTo(array("financial_institutions/edit/" . $financial_institution->id, "Edit")); ?></td>
+            <td><?php echo $this->tag->linkTo(array("financial_institutions/delete/" . $financial_institution->id, "Delete")); ?></td>
+        </tr>
+    <?php } ?>
+    </tbody>
+    <tbody>
+        <tr>
+            <td colspan="2" align="right">
+                <table align="center">
+                    <tr>
+                        <td><?php echo $this->tag->linkTo("financial_institutions/search", "First") ?></td>
+                        <td><?php echo $this->tag->linkTo("financial_institutions/search?page=" . $page->before, "Previous") ?></td>
+                        <td><?php echo $this->tag->linkTo("financial_institutions/search?page=" . $page->next, "Next") ?></td>
+                        <td><?php echo $this->tag->linkTo("financial_institutions/search?page=" . $page->last, "Last") ?></td>
+                        <td><?php echo $page->current, "/", $page->total_pages ?></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    <tbody>
+</table>
