@@ -31,6 +31,66 @@ class Categories extends \Phalcon\Mvc\Model
     public $weight;
      
     /**
+     *
+     * @var string
+     */
+    public $type;
+
+    /**
+     *
+     * @var integer
+     */
+    public $pge;
+
+    /**
+     *
+     * @var integer
+     */
+    public $pge_percent;
+
+  /**
+   * @return int
+   */
+  public function getPge() {
+    return $this->pge;
+  }
+
+  /**
+   * @param int $pge
+   */
+  public function setPge($pge) {
+    $this->pge = $pge;
+  }
+
+  /**
+   * @return int
+   */
+  public function getPgePercent() {
+    return $this->pge_percent;
+  }
+
+  /**
+   * @param int $pge_percent
+   */
+  public function setPgePercent($pge_percent) {
+    $this->pge_percent = $pge_percent;
+  }
+
+  /**
+   * @return string
+   */
+  public function getType() {
+    return $this->type;
+  }
+
+  /**
+   * @param string $type
+   */
+  public function setType($type) {
+    $this->type = $type;
+  }
+
+    /**
      * Method to set the value of field id
      *
      * @param integer $id

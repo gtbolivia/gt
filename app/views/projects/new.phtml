@@ -78,7 +78,7 @@
 
   <?php echo $this->tag->form("projects/create") ?>
 
-  <?php echo $this->getContent(); ?>
+<!--  --><?php //echo $this->getContent(); ?>
 
   <div align="center">
     <h1>Create projects</h1>
@@ -99,6 +99,8 @@
       </div>
     </div>
   </div>
+
+
   <div class="row">
     <div class="col-md-6">
       <div class="form-group">
@@ -179,19 +181,9 @@
 <!--END CUERPO DE LA PAGINA-->
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="js/jquery.min.js"></script>
+<script src="../js/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jasny-bootstrap.min.js"></script>
-
-<script>
-  $(document).ready(function () {
-    $('ul.tree').hide();
-
-    $('label.tree-toggler').click(function () {
-      $(this).parent().children('ul.tree').toggle(300);
-    });
-  });
-</script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/jasny-bootstrap.min.js"></script>
 </body>
 </html>

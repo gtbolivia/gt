@@ -29,13 +29,73 @@ class Projects extends \Phalcon\Mvc\Model
      * @var double
      */
     protected $investment;
+
+  /**
+   *
+   * @var integer
+   */
+  protected $gestionId;
+
+  /**
+     *
+     * @var integer
+     */
+    protected $categoryOrganizationalId;
      
-    /**
+  /**
+     *
+     * @var integer
+     */
+    protected $categorySectorId;
+
+  /**
+     *
+     * @var string
+     */
+    protected $departamento;
+
+  /**
+     *
+     * @var string
+     */
+    protected $city;
+
+  /**
+     *
+     * @var integer
+     */
+    protected $executionStartDate;
+
+  /**
+     *
+     * @var integer
+     */
+    protected $executionEndDate;
+
+  /**
+     *
+     * @var integer
+     */
+    protected $projectTypeId;
+
+  /**
+     *
+     * @var integer
+     */
+    protected $finalcialInstitutionId;
+
+  /**
+     *
+     * @var string
+     */
+    protected $socialImpact;
+
+  /**
      *
      * @var string
      */
     protected $implementation_period;
-     
+
     /**
      * Method to set the value of field id
      *

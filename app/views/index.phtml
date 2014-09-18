@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gestion Transparente</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/jasny-bootstrap.min.css" rel="stylesheet" media="screen">
+
+    <!-- Custom styles for this template -->
+    <link href="css/navmenu.css" rel="stylesheet">
+    <link href="css/gt.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<?php
+/*Just for your server-side code*/
+header('Content-Type: text/html; charset=ISO-8859-1');
+?>
+
+
+<!--BEGIN MENU IZQUIERDO-->
+<div class="navmenu navmenu-default navmenu-fixed-left offcanvas-sm gt-sideLeft">
+  <a class="navmenu-brand visible-md visible-lg margin0 bgWhite" href="#">
+    <img src="img/logo-gt.png" alt=""/>
+  </a>
+
+  <div class="container gt-sideLeft">
+    <form class="navbar-form" role="form">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Buscar proyecto.">
+        <span class="input-group-addon">Buscar</span>
+      </div>
+      <br/><br/>
+    </form>
+  </div>
+  <div class="container gt-sideLeft">
+    <ul class="nav navmenu-nav">
+      <?php foreach ($categories as $category) { ?>
+        <li><label class="tree-toggler"><?php echo strtoupper($category->name); ?></label>
+          <ul class="nav navmenu-nav tree">
+            <?php foreach ($categoriesList as $categoryChild) { ?>
+              <?php if ($categoryChild->category_parent_id == $category->id) { ?>
+                <li class="active"><a href="#"><span
+                      class="badge badge-success pull-right"><?php print $categoryChild->pge_percent;?>%</span><?php echo ucwords(strtolower($categoryChild->name)); ?>
+                  </a></li>
+              <?php } ?>
+            <?php } ?>
+          </ul>
+        </li>
+      <?php } ?>
+  </div>
+</div>
+<!--END MENU IZQUIERDO-->
+
+<?php echo $this->getContent() ?>
+<!--{{ content() }}-->
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jasny-bootstrap.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('ul.tree').hide();
+        $('label.tree-toggler').click(function () {
+            $(this).parent().children('ul.tree').toggle(300);
+        });
+    });
+</script>
+</body>
+</html>

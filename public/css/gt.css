@@ -74,7 +74,25 @@
     font-size: 24px;
 }
 
+/*Proyectos*/
+.myTabs{}
+.myTabs li a{background-color: #194353; color: #ffffff;}
+.myTabs li a:hover{background-color: #68a7b6; color: #194353;}
+.myTabs li.active a{background-color: #ffffff; color: #194353; }
+.myTabs li a.tabOpinion, .myTabs li a.tabOpinion:hover  {background-color: #55acef; color: #194353; }
+
+
 /*Estilos genericos*/
 .margin0{margin: 0}
+
+.paddingTB10{padding-top: 10px; padding-bottom: 10px;}
+
 .bgWhite{background-color: #fff}
+.bgLightBlue{background-color: #55acef;}
+.bgBlueGray{background-color: #68a7b6}
+
+.txtWhite{color: #ffffff;}
+.txtLightBlue{color: #55acef;}
+.txtBlueGray{color: #68a7b6;}
+
 .fontImportant{font: bold 24px Arial, Sans-Serif; color: #184353}
